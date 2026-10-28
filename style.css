@@ -112,57 +112,57 @@ body::before {
 /* header style start */
 
 header {
-    border: 1px solid red;
-    display: flex;
-    padding-top: 5rem;
-    align-items: center;
-    justify-content: center;
+  border: 1px solid red;
+  display: flex;
+  padding-top: 5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-links img {
-    width: 40px;
+  width: 40px;
 }
 
 .about-links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .about-heading {
-    font-family: 'Satoshi', sans-serif;
-    font-weight: bold;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: bold;
 }
 
 .about-text {
-    font-family: 'Cascadia Code', sans-serif;
+  font-family: 'Cascadia Code', sans-serif;
 }
 
 .about-me-container {
-    background-color: white;
-    width: 50%;
-    padding: 2rem;
-    height: fit-content;
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    border: 1px solid red;
+  background-color: white;
+  width: 50%;
+  padding: 2rem;
+  height: fit-content;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  border: 1px solid red;
 }
 
 .image-container {
-    position: relative;
+  position: relative;
 }
 
 .name {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    border: 1px solid red;
-    color: white;
-    font-family: 'Satoshi', sans-serif;
-    font-weight: bold;
-    font-size: 2.3rem;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid red;
+  color: white;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: bold;
+  font-size: 2.3rem;
 }
 
 /* main styling */
@@ -204,4 +204,50 @@ main {
 
 .project-description {
   padding-top: 1rem;
+}
+
+/* footer style */
+
+footer {
+  background: linear-gradient(
+    135deg,
+    hsl(192, 82%, 38%) 0%,
+    hsl(210, 80%, 45%) 100%
+  );
+}
+
+.footer-wrapper {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links img {
+  width: 40px;
+}
+
+.phone,
+.email img {
+  width: 20px;
+}
+
+.phone,
+.email {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.text-side {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid red;
 }
