@@ -104,6 +104,11 @@ body::before {
   z-index: -1;
 }
 
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* header style start */
 
 header {
@@ -111,8 +116,7 @@ header {
     display: flex;
     padding-top: 5rem;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: center;
 }
 
 .about-links img {
@@ -159,4 +163,45 @@ header {
     font-family: 'Satoshi', sans-serif;
     font-weight: bold;
     font-size: 2.3rem;
+}
+
+/* main styling */
+main {
+  padding: 5rem;
+}
+
+.project-card {
+  border: 1px solid red;
+}
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+.project-links img {
+  width: 40px;
+}
+
+.project-container {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-screenshot {
+  height: 300px;
+  border: 1px solid red;
+}
+
+.project-details {
+  padding: 1rem;
+}
+
+.project-description {
+  padding-top: 1rem;
 }
