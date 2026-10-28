@@ -103,3 +103,60 @@ body::before {
   clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
   z-index: -1;
 }
+
+/* header style start */
+
+header {
+    border: 1px solid red;
+    display: flex;
+    padding-top: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-links img {
+    width: 40px;
+}
+
+.about-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.about-heading {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
+}
+
+.about-text {
+    font-family: 'Cascadia Code', sans-serif;
+}
+
+.about-me-container {
+    background-color: white;
+    width: 50%;
+    padding: 2rem;
+    height: fit-content;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.image-container {
+    position: relative;
+}
+
+.name {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid red;
+    color: white;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
+    font-size: 2.3rem;
+}
