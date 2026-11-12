@@ -39,21 +39,23 @@ body::before {
 
 .wrapper {
   max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
 }
 
 /* header style start */
 
-header {
-  border: 1px solid red;
+.header {
   display: flex;
-  padding-top: 5rem;
+  padding-top: 4rem;
   align-items: center;
   justify-content: center;
+  gap: 0;
 }
 
 .about-links img {
-  width: 40px;
+  width: clamp(24px, 4vw, 40px);
+  height: auto;
 }
 
 .about-links {
@@ -65,42 +67,189 @@ header {
 .about-heading {
   font-family: 'Satoshi', sans-serif;
   font-weight: bold;
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
 }
 
 .about-text {
   font-family: 'Cascadia Code', sans-serif;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  color: hsl(30deg 1.15% 34.12%);
+}
+
+.about-text a:hover {
+  text-decoration: none;
+}
+.about-text a:visited {
+  color: purple;
 }
 
 .about-me-container {
   background-color: white;
-  width: 50%;
-  padding: 2rem;
+  padding: min(2vw, 2.5rem);
   height: fit-content;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-direction: column;
-  border: 1px solid red;
+  flex: 1;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .image-container {
   position: relative;
+  flex: 0 0 42%;
+  max-width: 500px;
+  overflow: hidden;
+  box-shadow: 11px 11px 28px -1px rgba(0, 0, 0, 0.3);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
 .name {
   position: absolute;
-  bottom: 10px;
+  bottom: 1rem;
   width: 100%;
   text-align: center;
-  border: 1px solid red;
   color: white;
   font-family: 'Satoshi', sans-serif;
   font-weight: bold;
-  font-size: 2.3rem;
+  font-size: clamp(1.75rem, 1rem + 3vw, 3rem);
 }
 
+/* style of the all svg icons links on the page */
+
+.links {
+  transition: all 0.5s ease;
+}
+
+.links img:hover,
+img:focus {
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@media (max-width: 1075px) {
+  .header {
+    display: block;
+    position: relative;
+    padding: 10rem 3rem 0 3rem;
+  }
+
+  .image-container {
+    float: left;
+    width: 45%;
+    max-width: 320px;
+    margin: -4rem 1.5rem 0rem -2rem;
+  }
+
+  .image-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-me-container {
+    display: block;
+    padding-top: 3rem;
+  }
+
+  .about-heading {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .about-text {
+    margin: 1rem 0;
+  }
+  .image-container {
+    float: left;
+    overflow: visible;
+  }
+  .name {
+    bottom: auto;
+    top: -0.5rem;
+    left: 100%;
+    width: max-content;
+    margin-left: 1rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .image-container {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+  box-shadow: 1px 16px 28px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .image-container img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+
+  }
+
+  .name {
+    top: auto;
+    left: 0;
+    bottom: 1rem;
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    white-space: normal;
+    font-size: clamp(1.5rem, 1.2rem + 3vw, 2.2rem);
+
+  }
+
+  .about-me-container {
+    display: block;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .about-heading {
+    text-align: center;
+    margin-top: 0;
+    font-size: clamp(1.5rem, 1rem + 3vw, 2rem);
+  }
+
+  .about-text {
+    margin: 1rem 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.1rem);
+  }
+
+  .about-links {
+    justify-content: center;    /* mobile pe icons center mein zyada acha lagta hai */
+  }
+}
+
+@media (max-width: 425px) {
+  .image-container img {
+    aspect-ratio: 2 / 3;
+  }
+}
 /* main styling */
-main {
-  padding: 5rem;
+.main {
+  padding: 5rem 0rem;
 }
 
 .project-card {
@@ -150,10 +299,9 @@ footer {
 }
 
 .footer-wrapper {
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
-  padding: 5rem;
+  padding: 5rem 0rem;
 }
 
 .footer-links {
@@ -174,7 +322,7 @@ footer {
 .email {
   display: flex;
   align-items: center;
-  gap: .8rem;
+  gap: 0.8rem;
 }
 
 .text-side {
@@ -182,5 +330,4 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid red;
 }
