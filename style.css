@@ -38,7 +38,7 @@ body::before {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1280px;
   width: 90%;
   margin: 0 auto;
 }
@@ -137,7 +137,7 @@ img:focus {
   .header {
     display: block;
     position: relative;
-    padding: 10rem 3rem 0 3rem;
+    padding: 10rem 0rem 0rem 0rem;
   }
 
   .image-container {
@@ -197,7 +197,7 @@ img:focus {
     position: relative;
     overflow: hidden;
     margin-top: 1rem;
-  box-shadow: 1px 16px 28px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 16px 28px -1px rgba(0, 0, 0, 0.3);
   }
 
   .image-container img {
@@ -205,7 +205,6 @@ img:focus {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
-
   }
 
   .name {
@@ -217,7 +216,6 @@ img:focus {
     text-align: center;
     white-space: normal;
     font-size: clamp(1.5rem, 1.2rem + 3vw, 2.2rem);
-
   }
 
   .about-me-container {
@@ -238,7 +236,7 @@ img:focus {
   }
 
   .about-links {
-    justify-content: center;    /* mobile pe icons center mein zyada acha lagta hai */
+    justify-content: center; /* mobile pe icons center mein zyada acha lagta hai */
   }
 }
 
@@ -252,21 +250,31 @@ img:focus {
   padding: 5rem 0rem;
 }
 
-.project-card {
-  border: 1px solid red;
+.my-work-heading {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
+  padding-bottom: 0.2rem;
+  font-weight: bold;
 }
+
+.project-card {
+  box-shadow: rgba(0, 0, 0, .1) 5px 4px 20px 0px;
+}
+
 .project-links {
   display: flex;
   gap: 1rem;
 }
+
 .project-links img {
-  width: 40px;
+  width: clamp(24px, 4vw, 40px);
+  height: auto;
 }
 
 .project-container {
   display: grid;
-  gap: 5rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .project-header {
@@ -275,9 +283,13 @@ img:focus {
   justify-content: space-between;
 }
 
+.project-header h4 {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
 .project-screenshot {
-  height: 300px;
-  border: 1px solid red;
+  min-height: 300px;
 }
 
 .project-details {
@@ -286,6 +298,9 @@ img:focus {
 
 .project-description {
   padding-top: 1rem;
+  font-family: 'Cascadia Code', sans-serif;
+  color: hsl(30deg 1.15% 34.12%);
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 /* footer style */
