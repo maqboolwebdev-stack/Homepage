@@ -222,6 +222,7 @@ img:focus {
     display: block;
     width: 100%;
     box-shadow: none;
+    background-color: transparent;
   }
 
   .about-heading {
@@ -240,7 +241,7 @@ img:focus {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .image-container img {
     aspect-ratio: 2 / 3;
   }
@@ -356,7 +357,7 @@ footer {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .image-side img {
