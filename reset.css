@@ -67,3 +67,28 @@ h6 {
   background-color: hsl(192, 82%, 78%);
   color: hsl(210, 80%, 22%);
 }
+
+:root {
+  --scrollbar-thumb: hsl(210, 85%, 45%);
+  --scrollbar-track: #fff;
+}
+
+html {
+  scrollbar-width: thin; 
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* 3. Fallback for older WebKit/Blink browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
