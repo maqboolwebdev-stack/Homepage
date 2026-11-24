@@ -120,19 +120,6 @@ body::before {
   font-size: clamp(1.75rem, 1rem + 3vw, 3rem);
 }
 
-/* style of the all svg icons links on the page */
-
-.links {
-  transition: all 0.5s ease;
-}
-
-.links img:hover,
-img:focus {
-  cursor: pointer;
-  transform: scale(1.1);
-  opacity: 0.8;
-}
-
 @media (max-width: 1075px) {
   .header {
     display: block;
@@ -237,7 +224,7 @@ img:focus {
   }
 
   .about-links {
-    justify-content: center; /* mobile pe icons center mein zyada acha lagta hai */
+    justify-content: center;
   }
 }
 
@@ -278,8 +265,87 @@ img:focus {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .links a:is(:hover, :focus-visible) img[src$='github.svg'],
+  .project-links img[src$='github.svg']:hover {
+    animation: github-icon-wiggle 720ms ease-in-out;
+    transform-origin: center;
+  }
+
+  .links a:is(:hover, :focus-visible) img[src$='linkedin.svg'] {
+    animation: linkedin-icon-lift 720ms ease-in-out;
+  }
+
+  .links a:is(:hover, :focus-visible) img[src$='x.svg'] {
+    animation: x-icon-wiggle 720ms ease-in-out;
+    transform-origin: center;
+  }
+
   .external-link-icon:hover .external-link-arrow {
-    animation: external-link-arrow-nudge 700ms ease-in-out;
+    animation: external-link-arrow-nudge 720ms ease-in-out;
+  }
+
+  .external-link-icon:hover .external-link-frame {
+    animation: external-link-frame-squeeze 720ms ease-in-out;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .phone-icon:hover {
+    animation: phone-icon-ring 720ms ease-in-out;
+    transform-origin: center;
+  }
+
+  .email-icon:hover {
+    animation: email-icon-squeeze 720ms ease-in-out;
+    transform-origin: center;
+  }
+}
+
+@keyframes github-icon-wiggle {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes linkedin-icon-lift {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20%,
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes x-icon-wiggle {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(4deg);
+  }
+
+  60% {
+    transform: rotate(-4deg);
   }
 }
 
@@ -289,11 +355,58 @@ img:focus {
   80%,
   100% {
     transform: translate(0, 0);
+    fill: currentColor;
   }
 
   20%,
   60% {
     transform: translate(2px, -2px);
+    fill: hsl(192, 82%, 38%);
+  }
+}
+
+@keyframes external-link-frame-squeeze {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+
+  20%,
+  60% {
+    transform: scale(0.97);
+  }
+}
+
+@keyframes phone-icon-ring {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(-7deg);
+  }
+
+  60% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes email-icon-squeeze {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: scaleX(1);
+  }
+
+  20%,
+  60% {
+    transform: scaleX(0.92);
   }
 }
 
@@ -356,7 +469,7 @@ footer {
   height: auto;
 }
 
-.phone,
+.phone img,
 .email img {
   width: clamp(18px, 3vw, 30px);
   height: auto;
