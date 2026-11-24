@@ -64,17 +64,6 @@ h6 {
 }
 
 ::selection {
-  background-color: transparent;
-  color: hsl(210, 85%, 45%);
-}
-
-.smooth-selection-box {
-  position: absolute;
-  background-color: lavender;
-  border-radius: 4px;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: multiply;
-  opacity: 0;
-  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.15s ease;
+  background-color: hsl(192, 82%, 78%);
+  color: hsl(210, 80%, 22%);
 }
